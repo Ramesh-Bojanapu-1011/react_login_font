@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-Quick Overview
+## Quick Overview
 npx create-react-app my-app
 
 cd my-app
