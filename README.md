@@ -1,114 +1,70 @@
-# React_login
+# Getting Started with Create React App
 
-Here is an example of a full stack login page using React for the frontend and Node.js with Express for the backend:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-1. Create a new React project by running the following command:
-bash
-npx create-react-app login-page
+## Available Scripts
 
+In the project directory, you can run:
 
-2. Install Axios for making HTTP requests in React:
-bash
-npm install axios
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-3. Create a form component for the login page (LoginForm.js):
-js
-import React, { useState } from "react";
-import axios from "axios";
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+### `npm test`
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    try {
-      const response = await axios.post("http://localhost:5000/login", {
-        username,
-        password,
-      });
+### `npm run build`
 
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
-  );
-};
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-export default LoginForm;
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-4. Create a backend server using Node.js and Express (server.js):
-js
-const express = require("express");
-const bodyParser = require("body-parser");
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-const app = express();
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-app.use(bodyParser.json());
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-  // Check username and password
-  if (username === "admin" && password === "admin") {
-    res.json({ message: "Login successful" });
-  } else {
-    res.status(401).json({ message: "Invalid username or password" });
-  }
-});
+## Learn More
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-5. Start the backend server by running the following command:
-bash
-node server.js
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-6. Update the App.js file in the React project to include the LoginForm component:
-js
-import React from "react";
-import "./App.css";
-import LoginForm from "./LoginForm";
+### Analyzing the Bundle Size
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Login Page</h1>
-      <LoginForm />
-    </div>
-  );
-}
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-export default App;
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-7. Start the React frontend by running the following command in the project directory:
-bash
-npm start
+### Advanced Configuration
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Now you should have a full stack login page with React frontend and Node.js Express backend. Users can enter their username a
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
