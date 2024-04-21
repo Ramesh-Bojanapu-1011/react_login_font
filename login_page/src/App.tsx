@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   const [isLogin, setIsLogin] = useState(true);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => {
     setIsLogin(tab === 'login');
   };
 
