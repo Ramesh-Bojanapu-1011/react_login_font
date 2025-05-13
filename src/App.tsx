@@ -23,7 +23,7 @@ function App() {
           <input type="email" className="input" placeholder="Email" />
           <input type="password" className="input" placeholder="Password" />
         </div>
-        <button className="submit-btn">Sign up</button>
+        <button type="submit" className="submit-btn">Sign up</button>
       </div>
       <div className={`login ${isLogin ? "" : "slide-up"}`}>
         <div className="center">
@@ -34,7 +34,7 @@ function App() {
             <input type="email" className="input" placeholder="Email" />
             <input type="password" className="input" placeholder="Password" />
           </div>
-          <button className="submit-btn">Log in</button>
+          <button type="submit" className="submit-btn">Log in</button>
         </div>
       </div>
     </div>
